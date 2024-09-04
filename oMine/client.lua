@@ -6,6 +6,7 @@ local jtabbasseducayou = false
 local hat = nil
 local PickAxe = nil
 
+
 CreateThread(function ()
     RequestModel(oMine.Pnj.model)
     while not HasModelLoaded(oMine.Pnj.model) do
@@ -17,7 +18,18 @@ CreateThread(function ()
     FreezeEntityPosition(npcPed, true)
     SetBlockingOfNonTemporaryEvents(npcPed, true)
     TaskStartScenarioInPlace(npcPed, "CODE_HUMAN_MEDIC_TIME_OF_DEATH", 0, true)
+
+    local Blipp = AddBlipForCoord(oMine.Pnj.coords.x,  oMine.Pnj.coords.y,  oMine.Pnj.coords.z)
+    SetBlipSprite(Blipp, oMine.Blips.sprite)
+    SetBlipDisplay(Blipp, 4)
+    SetBlipScale(Blipp, oMine.Blips.scale)
+    SetBlipColour(Blipp, oMine.Blips.color)
+    SetBlipAsShortRange(Blipp, true)
+    BeginTextCommandSetBlipName("STRING")
+    AddTextComponentString(oMine.Blips.name)
+    EndTextCommandSetBlipName(Blipp)
 end)
+
 
 exports['qb-target']:AddBoxZone("mine_zone", vector3(-595.04, 2091.48, 131.45), 2, 2, {
     name = "mine_zone",
