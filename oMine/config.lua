@@ -1,5 +1,6 @@
 oMine = {}
 oMine.Pnj = {model = "csb_ramp_hic", coords = vector4(-594.85, 2091.37, 130.49, 59.52)}
+oMine.Blips = {sprite = 566, color = 0, scale = 0.6, name = "Mining"}
 oMine.Cayoupos = {
     {coords = vector3(-593.6921997070312, 2080.69580078125, 130.54598999023438), rotation = vector3(0, 0, 0)},
     {coords = vector3(-592.576416015625, 2075.559326171875, 130.43748474121097), rotation = vector3(0, 0, 0)},
